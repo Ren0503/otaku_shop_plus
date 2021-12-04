@@ -22,6 +22,14 @@ import {
 } from 'redux-persist'
 import { PersistPartial } from 'redux-persist/es/persistReducer'
 import storage from 'redux-persist/lib/storage'
+
+import {
+    productListSlice,
+    productDetailsSlice,
+    productTopSlice,
+    createProductReviewSlice,
+} from 'reducers/product'
+
 import {
     userLoginSlice,
     userRegisterSlice,
@@ -48,6 +56,10 @@ function createReducer(isServer: boolean): Reducer {
         userRegister: userRegisterSlice.reducer,
         userDetails: userDetailsSlice.reducer,
         userUpdateProfile: userUpdateProfileSlice.reducer,
+        productList: productListSlice.reducer,
+        productTopRated: productTopSlice.reducer,
+        productDetails: productDetailsSlice.reducer,
+        createProductReview: createProductReviewSlice.reducer,
     })
     return rootReducer
 }

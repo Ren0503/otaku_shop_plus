@@ -1,3 +1,9 @@
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/solid'
+import 'styles/bootstrap.min.css'
+import 'styles/globals.css'
+
 import { AppProps } from 'next/app'
 import React from 'react'
 import { Container } from 'react-bootstrap'

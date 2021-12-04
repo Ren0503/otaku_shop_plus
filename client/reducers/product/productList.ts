@@ -8,11 +8,12 @@ import { baseUrl } from 'utils'
 
 export const listProducts = createAsyncThunk<
     ProductList,
-    { keyword: string }
+    { keyword: string; pageNumber?: number }
 >('PRODUCT_LIST', async (args) => {
     const { keyword } = args
+    const pageNumber = args.pageNumber ?? 1
     const response = await fetch(
-        `${baseUrl}/api/products${keyword ?? ''}`
+        `${baseUrl}/api/products?keyword=${keyword ?? ''}&page=${pageNumber}`
     )
     const data = await response.json()
     if (!response.ok) {

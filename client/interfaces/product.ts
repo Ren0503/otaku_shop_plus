@@ -4,9 +4,13 @@ export interface Product {
 	image: string;
 	description: string;
 	brand: string;
-	category: string;
+	genres: string;
+	character: string;
+	size: string;
+	series: string;
 	price: number;
 	countInStock: number;
+	soldOut: number;
 	rating: number;
 	numReviews: number;
 	reviews: Array<Review>;
