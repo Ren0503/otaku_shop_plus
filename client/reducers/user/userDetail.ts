@@ -7,6 +7,7 @@ import { TokenUser, User } from 'interfaces/user'
 import { ReduxState } from 'store'
 import { logout } from './userLogin'
 import { updateUserProfile } from './userUpdate'
+import { baseUrl } from 'utils'
 
 export const getUserDetails = createAsyncThunk<TokenUser, string>(
     'USER_DETAILS',
@@ -19,7 +20,7 @@ export const getUserDetails = createAsyncThunk<TokenUser, string>(
         }
         const token = state.userLogin.userInfo.token
 
-        const response = await fetch(`/api/users/profile/`, {
+        const response = await fetch(`${baseUrl}/api/users/profile/`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

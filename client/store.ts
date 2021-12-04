@@ -63,7 +63,7 @@ const makeStore = (): StoreType => {
     const store = (configureStore<ReduxState>({
         reducer: createReducer(isServer),
         // @ts-ignore: cant be bothered right now
-        middleware: getDefaultMiddleware<ReduxState>({
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware<ReduxState>({
             thunk: true,
             immutableCheck: true,
             // @ts-ignore: wrong typescript for this

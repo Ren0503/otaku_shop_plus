@@ -6,6 +6,7 @@ import {
 import { TokenUser } from 'interfaces/user'
 import { ReduxState } from 'store'
 import { logout, userLoginSlice } from './userLogin'
+import { baseUrl } from 'utils'
 
 export const updateUserProfile = createAsyncThunk<
     TokenUser,
@@ -15,7 +16,7 @@ export const updateUserProfile = createAsyncThunk<
     const state: ReduxState = thunkAPI.getState() as ReduxState
     const token = state.userLogin.userInfo.token
 
-    const response = await fetch(`/api/users/profile/update/`, {
+    const response = await fetch(`${baseUrl}/api/users/profile/update/`, {
         body: JSON.stringify({ email, password, name }),
         headers: {
             'Content-Type': 'application/json',

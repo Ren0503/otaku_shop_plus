@@ -7,14 +7,15 @@ import {
 } from '@reduxjs/toolkit'
 
 import { TokenUser } from 'interfaces/user'
+import { baseUrl } from 'utils'
 
 // Actions
 export const loginUser = createAsyncThunk<TokenUser, { email: string; password: string }>(
     'USER_LOGIN',
     async (args) => {
         const { email, password } = args
-        const response = await fetch('/api/users/login/', {
-            body: JSON.stringify({ email, password }),
+        const response = await fetch(`${baseUrl}/api/users/login/`, {
+            body: JSON.stringify({ 'username': email, 'password': password }),
             headers: { 'Content-Type': 'application/json' },
             method: 'POST',
         })

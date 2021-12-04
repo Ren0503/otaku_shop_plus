@@ -5,6 +5,7 @@ import {
 
 import { TokenUser } from 'interfaces/user'
 import { userLoginSlice, logout } from './userLogin'
+import { baseUrl } from 'utils'
 
 // Actions
 export const registerUser = createAsyncThunk<
@@ -12,7 +13,7 @@ export const registerUser = createAsyncThunk<
     { name: string; email: string; password: string }
 >('USER_REGISTER', async (args, thunkAPI) => {
     const { name, email, password } = args
-    const response = await fetch('/api/users/register/', {
+    const response = await fetch(`${baseUrl}/api/users/register/`, {
         body: JSON.stringify({ email, password, name }),
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',
