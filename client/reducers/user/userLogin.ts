@@ -6,7 +6,7 @@ import {
     PayloadAction,
 } from '@reduxjs/toolkit'
 
-import { TokenUser } from 'interfaces/user'
+import { TokenUser } from 'interfaces'
 import { baseUrl } from 'utils'
 
 // Actions

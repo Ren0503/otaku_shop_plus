@@ -3,7 +3,7 @@ import {
     createSlice,
 } from '@reduxjs/toolkit'
 
-import { TokenUser, User } from 'interfaces/user'
+import { TokenUser, User } from 'interfaces'
 import { ReduxState } from 'store'
 import { logout } from './userLogin'
 import { updateUserProfile } from './userUpdate'

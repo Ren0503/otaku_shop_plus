@@ -3,7 +3,7 @@ import {
     createSlice,
 } from '@reduxjs/toolkit'
 
-import { Product, ProductList } from 'interfaces/product'
+import { Product, ProductList } from 'interfaces'
 import { baseUrl } from 'utils'
 
 export const listProducts = createAsyncThunk<
